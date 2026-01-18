@@ -23,3 +23,53 @@
 - [Gophers](https://github.com/egonelbre/gophers)
 - [Leran to code Go](https://github.com/GoesToEleven/learn-to-code-go-version-03)
 - [A tour of Go](https://go.dev/tour/welcome/1)
+
+## Getting going
+
+### Why Go?
+
+Go is a statically typed, compiled language designed at Google by Robert Griesemer, Rob Pike, and Ken Thompson. It is known for its simplicity, efficiency, and concurrency features. Go's syntax is clean and easy to read, making it a great choice for both beginners and experienced developers.
+
+### First program
+
+```go
+// main package
+package main
+
+import (
+	"fmt"
+)
+
+// main entry point
+func main() {
+	fmt.Println("Hello, Go!")
+}
+```
+
+### Format printing
+
+[fmt](https://pkg.go.dev/fmt)
+[Printf](https://pkg.go.dev/fmt#example-Printf)
+[formats](https://pkg.go.dev/fmt#hdr-Printing)
+
+```go
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	const name, age = "Kim", 22
+	n, err := fmt.Printf("%s is %d years old.\n", name, age)
+
+	// It is conventional not to worry about any
+	// error returned by Printf.
+	if err != nil {
+		fmt.Printf("Error: %s", err)
+	}
+	fmt.Printf("Bytes written: %d\n", n)
+
+	fmt.Printf("name type is %T and its value is %v", name, name)
+}
+```
