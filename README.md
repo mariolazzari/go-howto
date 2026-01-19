@@ -226,4 +226,10 @@ func main() {
 }
 ```
 
-###
+### Built-in types
+
+[Types](https://pkg.go.dev/builtin)
+
+### Scopes
+
+[Scope](https://go.dev/ref/spec#Declarations_and_scope)
