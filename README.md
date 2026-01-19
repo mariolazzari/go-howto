@@ -233,3 +233,133 @@ func main() {
 ### Scopes
 
 [Scope](https://go.dev/ref/spec#Declarations_and_scope)
+
+## Exercises
+
+### A tour of Go
+
+[A tour of Go](https://go.dev/tour/list)
+
+### iota
+
+[iota](https://go.dev/wiki/Iota)
+
+### Measuring bits
+
+```go
+package main
+
+import "fmt"
+
+type ByteSize int
+
+const (
+	_           = iota // ignore first value by assigning to blank identifier
+	KB ByteSize = 1 << (10 * iota)
+	MB
+	GB
+	TB
+	PB
+	EB
+	// ZB
+	// YB
+)
+
+func main() {
+	fmt.Printf("%d \t\t\t %b\n", KB, KB)
+	fmt.Printf("%d \t\t %b\n", MB, MB)
+	fmt.Printf("%d \t\t %b\n", GB, GB)
+	fmt.Printf("%d \t\t %b\n", TB, TB)
+	fmt.Printf("%d \t %b\n", PB, PB)
+	fmt.Printf("%d \t %b\n", EB, EB)
+}
+
+/*
+PB		    1125899906842624
+EB		 1152921504606846976
+int		18446744073709551615
+*/
+```
+
+### Zero values
+
+```go
+package main
+
+import "fmt"
+
+var y int
+
+func main() {
+	fmt.Println(y)
+
+	z := 42
+	fmt.Println(z)
+
+	a, b := 43, "Happiness"
+	fmt.Println(a, b)
+
+	var c float32 = 42.42
+	fmt.Printf("%v is of this type %T\n",c, c)
+
+	e, f, _ := 45, 46, 47
+	fmt.Println(e, f)
+
+}
+
+/*
+var for zero value
+short declaration operator
+multiple initializations
+var when specificity is required
+blank identifier
+
+*/
+```
+
+### Show values and types
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+	s, i, f := "Happiness", 42, 42.42
+	fmt.Printf("%v is of type %T\n",i,i)
+	fmt.Printf("%v is of type %T\n",f,f)
+	fmt.Printf("%v is of type %T\n",s,s)
+}
+```
+
+### Printf
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+	x, y, z := 747, 911, 90210
+
+	fmt.Printf("%d \t\t %b \t\t %#X\n",x,x,x)
+	fmt.Printf("%d \t\t %b \t\t %#X\n",y,y,y)
+	fmt.Printf("%d \t\t %b \t %#X\n",z,z,z)
+}
+```
+
+### Signed and unsigned
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+	var x uint8 = 255
+	var y int8 = 127
+
+	fmt.Printf("%v is of type %T\n", x, x)
+	fmt.Printf("%v is of type %T\n", y, y)
+}
+```
