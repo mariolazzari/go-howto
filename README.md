@@ -452,3 +452,17 @@ ssh-keygen -t ed25519 -C "your_email@example.com"
 ```
 
 ## Dev enviroment
+
+### Running go programs
+
+```sh
+go mod init github.com/mariolazzari/go-howto/go-env
+go run .
+go build
+go env GOARCH GOOS
+GOOS=darwin go build
+go version
+go help
+go help env
+go env
+```
