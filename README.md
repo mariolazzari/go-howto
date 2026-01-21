@@ -444,3 +444,11 @@ func (p person) sayHello() {
 ### Terminal commands
 
 [Linux](https://ss64.com/bash/)
+
+### Github ssh
+
+```sh
+ssh-keygen -t ed25519 -C "your_email@example.com"
+```
+
+## Dev enviroment
