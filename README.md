@@ -466,3 +466,14 @@ go help
 go help env
 go env
 ```
+
+## Go mod
+
+### Modules & dependencies
+
+[Go mod](https://go.dev/doc/modules/gomod-ref)
+
+### Modular code
+
+[Go get](https://go.dev/doc/go-get-install-deprecation)
+[Go packages](https://pkg.go.dev/)
